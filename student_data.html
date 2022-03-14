@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Nick Budd Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">Projects</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="https://www.linkedin.com/in/nicholas-budd-19950ab0/" target="_blank">LinkedIn</a></li>
+							<li><a href="https://github.com/NicholasBudd" target="_blank">Github</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+						</ul>
+					</nav>
+					
+				</header>
+
+				<!-- Main -->
+					<div id="main">
+
+<!-- Post: Student Growth Project-->
+<article class="post">
+	<header>
+		<div class="title">
+			<h2>Analyzing Student Growth</a></h2>
+			<p>Visualize and analyze students growth over the course of a semester in a 
+				dynamic dashboard from the persepective of a teacher.</p>
+		</div>
+		<div class="meta">
+			<time class="published" datetime="2022-06-06">March 6, 2022</time>
+
+		</div>
+	</header>
+	<center>SUMMARY</center>
+	<br />
+	<center>Standardized exam scores are utilized by educators as a metric of the academic progress of students. 
+		This dynamic dashboard quickly compares exam scores between individual students and students aggregated by 
+		class periods with day-to-day assignment averages. 
+
+		The strength of this dashboard lies in the scatter plots. Each student falls in 1 of 4 distinct “Zones” based on 
+		the relationship between the student’s exam grade and the student’s day-to-day average. A student’s Zone is 
+		suggestive of the student's overall academic performance. Zones may also have unique implications with additional
+		context given by the classroom educator (i.e. a student in Zone 4 may be suffering from testing anxiety, a student 
+		in Zone 2 may be ‘gifted’ but not engaged day-to-day). We can also adjust to see individual class periods and how 
+		they performed compared to others using the bar at the top right.
+		<br>
+		To protect each students identity, we labeled each student as 'Jane Doe #'. </center>
+	<br />
+	<br />
+	<!-- Tableau Dashboard embed-->
+	<div class='tableauPlaceholder' id='viz1646594752282' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='TestScoresvs_DailyAverages&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1646594752282');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1677px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>							
+	<br />
+	<center>BACKGROUND</center>
+	Six data tables containing daily assignment grades and exam grades were converted to a relational database using Azure Data Studio. 
+	These tables were left joined to the table containing daily assignment from the first six weeks grades using SQL. 
+	Every student has a distinct ID # that is associated with them so we used that as a means to join the tables. View the query used to 
+	export data below. See the full SQL script here.	
+
+	<br />
+	<br />
+	<center> <img src="./images/SQL_joins.png" alt="" width="800" height="550"> </center>
+	<br />
+	<br />
+	The user-defined data clusters within the scatter plot, or “Zones”, are associated with four calculated fields. Each Zone is 
+	defined using a Boolean calculation against a set of linear inequalities. For example, Zone 1 includes students with both an 
+	Exam Grade above 60 and a daily average above 70 (see below). These calculated fields are assigned distinct colors 
+	in the Marks card.	
+	<br>
+	<br>
+	<center> <img src="./images/zone_sections.jpeg" alt="" width="500" height="250"> </center>	<br />
+	<br>
+	<br>
+		
+	<footer>
+		<ul class="actions">
+			<li><a href="index.html" class="button large">Return to Projects</a></li>
+			<li><a href="https://public.tableau.com/views/TestScoresvs_DailyAverages/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank" class="button large">View Dashboard in Tableau</a></li>
+			<li><a href="https://github.com/NicholasBudd/PortfolioProjects/blob/main/student_data_joins.sql" target="_blank" class="button large">View Script in Github</a></li>
+		</ul>
+		<ul class="stats">
+		</ul>
+	</footer>
+</article>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

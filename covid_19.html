@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Nick Budd Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">Projects</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="https://www.linkedin.com/in/nicholas-budd-19950ab0/" target="_blank">LinkedIn</a></li>
+							<li><a href="https://github.com/NicholasBudd" target="_blank">Github</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+						</ul>
+					</nav>
+					
+				</header>
+
+				<!-- Main -->
+					<div id="main">
+
+<!-- Post: COVID-19 Project-->
+<article class="post">
+	<header>
+		<div class="title">
+			<h2>The Global Effect of COVID-19 </a></h2>
+			<p>Visualize and analyze the impact COVID-19 had on the global scale.</p>
+		</div>
+		<div class="meta">
+			<time class="published" datetime="2021-12-29">December 29, 2021</time>
+
+		</div>
+	</header>
+	<center>SUMMARY</center>
+	<br />
+	<center>Several metrics of COVID-19 are analyzed in this map focused Tableau dashboard. The data spans from Jan 2020 to Nov 2021 and is sourced from <a href="https://ourworldindata.org/covid-deaths">OurWorldInData</a>. The main idea behind this study was to get as much information without any bias on the death rate behind the pandemic that took the world by storm. Let's take a look.</center>
+	<br />
+	<br />
+	<!-- Tableau Dashboard embed-->
+	<div class='tableauPlaceholder' id='viz1646247549915' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='COVIDDashboard_16407993184500&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1646247549915');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1227px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>								
+	<br />
+	<center>BACKGROUND</center>
+	The raw data is sourced courtesy of <a href="https://ourworldindata.org/covid-deaths">OurWorldInData</a> and includes 
+	global data from hundreds of countries from the beginning of the pandemic, around Jan. 2020 all the way up to Nov. 2021. 
+	<br />
+	<br />
+	In order to build our first dashboard view we need to calculate the real death percentage.
+	<br />
+	<br />
+	<center> <img src="images/first_dashview_covid.png" alt="" width="800" height="175"> </center>
+	<br />
+	<br />
+	The second part of our dashboard is breaking the data down to see total death count per continent.
+	<br />
+	<br />
+	<center> <img src="images/death_by_cont_covid.png" alt="" width="800" height="205"> </center>
+	<br>
+	<br>
+	One of my favorite parts about this project that we didn't include in our dashboard was finding out the 
+	percentage of the population that was vaccinated and logging it by date. The entire basis of this dashboard 
+	was to track the deaths due to COVID-19. In order for us to find out about the percentage of the 
+	population that was vaccinated we had to create a CTE (common table expression). Let's take a look below... 
+	<br>
+	<br>
+	<center> <img src="images/cte_creation_covid.png" alt="" width="800" height="575"> </center>
+	<br>
+	<br>
+		
+	<footer>
+		<ul class="actions">
+			<li><a href="index.html" class="button large">Return to Projects</a></li>
+			<li><a href="https://public.tableau.com/app/profile/nicholas.budd/viz/COVIDDashboard_16407993184500/Dashboard1" target="_blank" class="button large">View Dashboard in Tableau</a></li>
+			<li><a href="https://github.com/NicholasBudd/PortfolioProjects/blob/main/covidProject.sql" target="_blank" class="button large">View Script in Github</a></li>
+		</ul>
+		<ul class="stats">
+		</ul>
+	</footer>
+</article>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Nick Budd Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">Projects</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="https://www.linkedin.com/in/nicholas-budd-19950ab0/" target="_blank">LinkedIn</a></li>
+							<li><a href="https://github.com/NicholasBudd" target="_blank">Github</a></li>
+							<li><a href="resume.html">Resume</a></li>
+							<li><a href="certifications.html">Certifications</a></li>
+						</ul>
+					</nav>
+					
+				</header>
+
+				<!-- Main -->
+					<div id="main">
+
+<!-- Post: COVID-19 Project-->
+<article class="post">
+	<header>
+		<div class="title">
+			<h2>Nashville Housing Data</a></h2>
+			<p>Visualize and analyze the impact COVID-19 had on the global scale.</p>
+		</div>
+		<div class="meta">
+			<time class="published" datetime="2021-12-29">December 29, 2021</time>
+
+		</div>
+	</header>
+	<center>SUMMARY</center>
+	<br />
+	Several metrics of the Dallas – Fort Worth housing market are analyzed in this map focused Tableau dashboard. The data spans from 2012 to 2021 and is sourced from <a href="https://www.redfin.com/news/data-center/">Redfin</a>. Change the view between “Median Sale Price” and “Percent Change of Sale Price” by clicking the navigation buttons at the top of the dashboard. 
+	<br />
+	<br />
+	According to this study, residential homes in the Dallas – Fort Worth metroplex saw a price increase of 18.6% from 2020 to 2021, outpacing the <a href="https://www.msn.com/en-us/money/realestate/home-prices-in-2021-rose-169-25-the-highest-on-record/ar-AASYy5I"> national average of 16.9%</a>.  The average price of a DFW home in 2021 remains below the national average; $318,000 in DFW versus <a href="https://www.msn.com/en-us/money/realestate/home-prices-in-2021-rose-169-25-the-highest-on-record/ar-AASYy5I">$347,000 nationally</a>. 
+	<br />
+	<br />
+	<!-- Tableau Dashboard embed-->
+	<div class='tableauPlaceholder' id='viz1646247549915' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='COVIDDashboard_16407993184500&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1646247549915');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1227px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>								
+	<br />
+	<center>BACKGROUND</center>
+	The raw data is sourced courtesy of <a href="https://www.redfin.com/news/data-center/">Redfin</a> and includes several housing metrics delineated by zip code. Though this study focuses on the NE Texas region, national data is available for download. 
+	<br />
+	<br />
+	City and county information for each data entry is absent from the raw data file. To later group and filter these data by regions broader than zip code, an additional table detailing the city and county for each zip code was joined to the raw data file during the query process using SQL.
+	<br />
+	<br />
+	<center> <img src="images/housingrawdata.png" alt="" width="800" height="225"> </center>
+	<br />
+	<br />
+	The database was initially queried for the median sale price of homes in each zip code by month. This data was used to build the first dashboard view. 
+	<br />
+	<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fclintonfarr%2FHousingMarket%2Fblob%2Fmain%2FSample%25201&style=github"></script>
+	<br />
+	A more complex query was necessary to calculate the percent change in median sale price from year to year. First, the average price of a home within each zip code per year was calculated using a SQL view to temporarily store the data for later calculations. The data needed to be grouped by year, as each entry in the raw data table represents a single month. This required the extraction of the numeric year from the “month” column.
+	<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fclintonfarr%2FHousingMarket%2Fblob%2Fmain%2Fsample%25202&style=github"></script>
+	<center> <img src="images/housingview.png" alt="" width="740" height="98"> </center>
+	<br />
+	<br />
+	<br />
+	An additional query acting on the previously stored view utilized a combination of lag window functions to achieve the percent change in sale price (year over year). The window functions were partitioned by zip code and ordered by the year. These data were used to build the second dashboard view in Tableau. 
+	<br />
+	<br />
+	<center> <img src="images/percentchange.png" alt="" width="400" height="111"> </center>
+	<br />
+	<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fclintonfarr%2FHousingMarket%2Fblob%2Fmain%2Fsample%25203&style=github"></script>
+	<p><br /></p>
+		
+	<footer>
+		<ul class="actions">
+			<li><a href="index.html" class="button large">Return to Projects</a></li>
+			<li><a href="https://public.tableau.com/app/profile/nicholas.budd/viz/COVIDDashboard_16407993184500/Dashboard1" target="_blank" class="button large">View Dashboard in Tableau</a></li>
+			<li><a href="https://github.com/NicholasBudd/PortfolioProjects/blob/main/NashvilleHousingDataCleaning.sql" target="_blank" class="button large">View Script in Github</a></li>
+		</ul>
+		<ul class="stats">
+		</ul>
+	</footer>
+</article>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
